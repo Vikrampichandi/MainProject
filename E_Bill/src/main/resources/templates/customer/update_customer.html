@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+	<title>EB Billing Management System</title>
+
+	<link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+	<script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+	<div class="container text-center">
+	<br>
+	
+		<div >
+       		 <img class="img-fluid " th:src="@{/images/ShopmeAdminBig.png}" alt="Logo"/>
+    	
+			<hr>
+			<h2>Update Customer</h2>
+		</div>
+		<div align="center"> 
+		<form th:action="@{/saveCustomer}" th:object="${customer}" method="POST" style="max-width: 800px; margin: 0 auto;">
+			
+			<input type="hidden" th:field="*{customerid}" />
+			<input type="hidden" th:field="*{password}" />
+			
+			<input type="text" th:field="*{name}" placeholder="Customer Name"
+				class="form-control mb-4 col-4"> 
+				
+			<input type="text"
+				th:field="*{address}" placeholder="Customer Address"
+				class="form-control mb-4 col-4"> 
+				
+			<input type="text"
+				th:field="*{city}" placeholder="Customer city"
+				class="form-control mb-4 col-4">
+				
+			<input type="text"
+				th:field="*{state}" placeholder="Customer State"
+				class="form-control mb-4 col-4"> 
+				
+			<input type="text"
+				th:field="*{email}" placeholder="Customer email"
+				class="form-control mb-4 col-4"> 
+				
+			<input type="text"
+				th:field="*{phone}" placeholder="Customer Phone Number"
+				class="form-control mb-4 col-4">
+
+			<button type="submit" class="btn btn-info col-2">Update	Customer</button>
+		</form>
+		<hr>
+			<a th:href="@{/customer/home}"> Back</a>
+		</div>
+	</div>
+</body>
+</html>
